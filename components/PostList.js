@@ -77,20 +77,7 @@ function PostList ({
   return <div>Loading</div>
 }
 
-export const allPosts = gql`
-  query allPosts($first: Int!, $skip: Int!) {
-    allPosts(orderBy: createdAt_DESC, first: $first, skip: $skip) {
-      id
-      title
-      votes
-      url
-      createdAt
-    }
-    _allPostsMeta {
-      count
-    }
-  }
-`
+export const allPosts = require('./all_posts.graphql');
 export const allPostsQueryVars = {
   skip: 0,
   first: POSTS_PER_PAGE

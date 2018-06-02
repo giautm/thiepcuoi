@@ -30,15 +30,7 @@ function PostUpvoter ({ upvote, votes, id }) {
   )
 }
 
-const upvotePost = gql`
-  mutation updatePost($id: ID!, $votes: Int) {
-    updatePost(id: $id, votes: $votes) {
-      id
-      __typename
-      votes
-    }
-  }
-`
+const upvotePost = require('./upvote.graphql')
 
 export default graphql(upvotePost, {
   props: ({ ownProps, mutate }) => ({

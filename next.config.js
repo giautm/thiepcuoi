@@ -1,7 +1,11 @@
 // next.config.js
 const withLess = require('@zeit/next-less')
-module.exports = withLess({
+const withGraphql = require('next-plugin-graphql')
+
+module.exports = withGraphql(withLess({
   lessLoaderOptions: {
     javascriptEnabled: true,
+    minimize: true,
+    sourceMap: false,
   },
-})
+}))
