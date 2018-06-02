@@ -1,28 +1,31 @@
 import Link from 'next/link'
 import { withRouter } from 'next/router'
+import { Button } from 'antd';
+import { Layout, Menu, Breadcrumb } from 'antd';
+const { Header, Content, Footer } = Layout;
 
-const Header = ({ router: { pathname } }) => (
-  <header>
-    <Link prefetch href='/'>
-      <a className={pathname === '/' ? 'is-active' : ''}>Home</a>
-    </Link>
-    <Link prefetch href='/about'>
-      <a className={pathname === '/about' ? 'is-active' : ''}>About</a>
-    </Link>
-    <style jsx>{`
-      header {
-        margin-bottom: 25px;
-      }
-      a {
-        font-size: 14px;
-        margin-right: 15px;
-        text-decoration: none;
-      }
-      .is-active {
-        text-decoration: underline;
-      }
-    `}</style>
-  </header>
-)
+class MyHeader extends React.Component {
+  render() {
+    const { router: { pathname } } = this.props;
+    return (
+      <Header style={{ position: 'fixed', zIndex: 1, width: '100%' }}>
+        <div className="logo" />
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={[pathname]}
+          style={{ lineHeight: '40px' }}
+        >
+          <Menu.Item key="/">
+            <Link prefetch href='/'>Home</Link>
+          </Menu.Item>
+          <Menu.Item key="/about">
+            <Link prefetch href='/about'>About</Link>
+          </Menu.Item>
+        </Menu>
+      </Header>
+    );
+  }
+}
 
-export default withRouter(Header)
+export default withRouter(MyHeader)

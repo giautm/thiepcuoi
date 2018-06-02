@@ -1,6 +1,7 @@
+import { Layout } from 'antd';
 
 export default ({ children }) => (
-  <main>
+  <Layout>
     {children}
-  </main>
+  </Layout>
 )
