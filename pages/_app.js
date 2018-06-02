@@ -1,11 +1,17 @@
-import App, {Container} from 'next/app'
+import App, { Container } from 'next/app'
 import React from 'react'
-import withApolloClient from '../lib/with-apollo-client'
 import { ApolloProvider } from 'react-apollo'
+
+import '../asserts/styles.less';
+import withApolloClient from '../lib/with-apollo-client'
 
 class MyApp extends App {
   render () {
-    const {Component, pageProps, apolloClient} = this.props
+    const {
+      Component,
+      apolloClient,
+      pageProps,
+    } = this.props
     return (
       <Container>
         <ApolloProvider client={apolloClient}>
