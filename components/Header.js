@@ -17,10 +17,10 @@ class MyHeader extends React.Component {
           style={{ lineHeight: '40px' }}
         >
           <Menu.Item key="/">
-            <Link prefetch href='/'>Home</Link>
+            <Link prefetch href='/'><a>Home</a></Link>
           </Menu.Item>
           <Menu.Item key="/about">
-            <Link prefetch href='/about'>About</Link>
+            <Link prefetch href='/about'><a>About</a></Link>
           </Menu.Item>
         </Menu>
       </Header>

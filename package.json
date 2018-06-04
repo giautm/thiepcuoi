@@ -23,6 +23,7 @@
     "less": "3.0.4",
     "next": "6.0.3",
     "next-plugin-graphql": "0.0.1",
+    "next-runtime-dotenv": "1.0.1",
     "prop-types": "15.6.1",
     "react": "16.4.0",
     "react-apollo": "2.1.4",
